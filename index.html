@@ -1,145 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Page - Wansee</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333333;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
-        a {
-            text-decoration: none;
-            color: #000957;
-            font-weight: bold;
-        }
+.card-wrapper{
+  max-width: 1100px;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.card-list .card-item{
+  list-style: none;
+}
+.card-list .card-item .card-link{
+  user-select: none;
+  display: block;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+.card-list .card-item .card-link:active{
+  cursor: grabbing;
+}
+.card-list .card-item .card-link:hover{
+  border-color: #5372F0;
+}
+.card-list .card-link .card-image{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-list .card-link .badge{
+  color: #5372F0;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 16px 0 18px;
+  background: #DDE4FF;
+  width: fit-content;
+  border-radius: 50px;
+}
+.card-list .card-link .badge.beef{
+  color: green;
+  background: lightblue;
+}
+.card-list .card-link .badge.pork{
+  color: rgb(153, 0, 255);
+  background: lightblue;
+}
+.card-list .card-link .badge.chicken{
+  color: rgb(240, 116, 0);
+  background: lightblue;
+}
+.card-list .card-link .badge.fish{
+  color: rgb(247, 8, 255);
+  background: lightblue;
+}
+.card-list .card-link .badge.vegetable{
+  color: rgb(248, 0, 0);
+  background: lightblue;
+}
+.card-list .card-link .badge.snacks{
+  color: rgb(4, 0, 214);
+  background: lightblue;
+}
+.card-list .card-link .badge.dessert{
+  color: rgb(247, 8, 255);
+  background: lightblue;
+}
+.card-list .card-link .card-title{
+  font-size: 1.19rem;
+  color: black;
+  font-weight: 600;
 
-        a:hover {
-            color: #FFEB00;
-        }
+}
+.card-list .card-link .card-button{
+  height: 35px;
+  width: 35px;
+  color: #5372F0;
+  border-radius: 50%;
+  margin: 30px 0 5px;
+  background: none;
+  cursor: pointer;
+  border: 2px solid #5372F0;
+  transform: rotate(-45deg);
+  transition: 0.4s ease;
+}
+.card-list .card-link:hover .card-button{
+  color: #fff;
+  background: #5372F0;
+}
+.card-wrapper .swiper-pagination-bullet{
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #5372F0;
+}
+.card-wrapper .swiper-pagination-bullet-active{
+  opacity: 1;
+}
 
- /* Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.card-wrapper .swiper-slide-button{
+  color: #5372F0;
+  margin-top: -35px;
+}
+@media screen and (max-width: 768px) {
+  .card-wrapper{
+    margin: 0 10px 25px;
+  }
+  .card-wrapper .swiper-slide-button{
+    display: none;
+  }
+}
 
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #181823;
-        }
+.welcometitle{
+  font-family: Rubik Mono One, serif; 
+  font-weight: 100; 
+  font-style: normal; 
+  font-size: 30px; 
+  margin-bottom: -20px;
+}
+@media (max-width: 425px) {
+  .welcometitle {
+    font-size: 16px;
+    margin-top: 10px;
 
-        nav a {
-            margin: 0 15px;
-            font-size: 1.2rem;
-            color: #181823;
-        }
+  }
+}
+@media (max-width: 375px), (max-width: 320px) {
+  .welcometitle {
+    font-size: 16px;
+    margin-top: 10px;
 
-        nav a:hover {
-            color: #537FE7;
-        }
+  }
+}
 
-
-        /* Start Page */
-        #start-page {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            text-align: center;
-            background-color: #E9F8F9;
-            background-image: url('./images/phstyle.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        #start-page h1 {
-            font-size: 4rem;
-            color: #181823;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.7); /* White Shadow */
-        }
-
-        #start-page p {
-            font-size: 1.5rem;
-            color: #181C14;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 1.0); /* Subtle White Shadow */
-        }
-
-        #start-page button {
-            background-color: #537FE7;
-            color: #ffffff;
-            padding: 15px 40px;
-            font-size: 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #start-page button:hover {
-            background-color: #577BC1;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #181823;
-            color: #C0EEF2;
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer a {
-            color: #FFFFFF;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #537FE7;
-        }
-
-    </style>
-</head>
-<body>
-
-   <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">Wansee Recipee</div>
-        <div>
-            <a href="home.html">Home</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="about.html">About</a>
-
-        </div>
-    </nav>
-
-    <!-- Start Page -->
-    <div id="start-page">
-        <h1>Philippine Flavors</h1>
-        <p>Bite Into the Heart of Filipino Cuisine</p>
-        <button onclick="location.href='home.html'">Start Exploring</button>
-    </div>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Wansee | Follow us on 
-        <a href="https://twitter.com" target="wansee">X (Twitter)</a> | 
-        <a href="https://www.instagram.com" target="wansee">Instagram</a>
-    </p>
-</footer>
-
-</body>
-</html>
+.swiper{
+  margin-bottom: 50px;
+}
