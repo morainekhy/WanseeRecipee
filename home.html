@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wansee Recipee - Home</title>
     <style>
+        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -14,9 +15,10 @@
             text-align: center;
         }
 
+        /* Header */
         header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
             background-color: #000;
@@ -28,9 +30,9 @@
             font-weight: bold;
             font-family: 'Lora', serif;
             color: #fff;
-            margin-right: 15px;
         }
 
+        /* Search Bar */
         .search-container {
             flex: 2;
             display: flex;
@@ -92,15 +94,14 @@
             color: #D1D1D1;
         }
 
-        .menu-toggle {
+        .menu-icon {
             display: none;
             font-size: 2rem;
-            background: none;
-            border: none;
             color: #fff;
             cursor: pointer;
         }
 
+        /* Hero Section */
         .hero {
             position: relative;
             width: 100%;
@@ -147,11 +148,7 @@
             background-color: #D1D1D1;
         }
 
-        .section {
-            padding: 50px;
-            text-align: center;
-        }
-
+        /* Recipe Cards */
         .recipes-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -199,6 +196,7 @@
             color: #D1D1D1;
         }
 
+        /* Footer */
         footer {
             background-color: #000;
             color: #D1D1D1;
@@ -216,182 +214,181 @@
             color: #fff;
         }
 
-        /* Hamburger Menu for small screens */
+        /* Responsive Design */
         @media only screen and (max-width: 768px) {
-            nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #000;
-                z-index: 100;
-            }
-
-            nav ul {
+            header {
                 flex-direction: column;
-                align-items: center;
-                padding-top: 10px;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 15px;
-            }
-
-            .recipes-container {
-                display: none;
-            }
-
-            .carousel {
-                display: block;
-                width: 100%;
-                overflow: hidden;
-            }
-
-            .carousel-items {
-                display: flex;
-                transition: transform 0.3s ease;
-            }
-
-            .carousel-item {
-                flex: 0 0 100%;
+                align-items: flex-start;
                 padding: 15px;
             }
 
-            .carousel-buttons {
+            .logo {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .search-container {
+                flex: 1;
+                justify-content: flex-start;
+            }
+
+            .search-bar {
+                width: 250px;
+            }
+
+            nav ul {
+                display: none; /* Hide navigation links by default */
+                width: 100%;
+                flex-direction: column;
+                padding-left: 0;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            .mobile-menu.active {
                 display: flex;
-                justify-content: center;
+            }
+
+            .hero {
+                height: 50vh; /* Adjust height for smaller screens */
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content button {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+
+            .recipes-container {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            footer .footer-links {
                 margin-top: 10px;
             }
 
-            .carousel-buttons button {
-                padding: 10px;
-                background-color: #000;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-                margin: 0 5px;
+            footer a {
+                margin: 5px;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <div class="logo">Wansee Recipee</div>
-    <div class="search-container">
-        <input type="text" id="search-bar" class="search-bar" placeholder="Search for recipes..." onkeypress="checkEnter(event)">
-        <button class="search-button" onclick="searchRecipes()">
-            <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
-        </button>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">Wansee Recipee</div>
+        <div class="search-container">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search for recipes..." onkeypress="checkEnter(event)">
+            <button class="search-button" onclick="searchRecipes()">
+                <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+            </button>
+        </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav>
-        <ul>
-            <li><a href="index.html">Front Page</a></li>
-            <li><a href="categories.html">Categories</a></li>
-            <li><a href="newsletter.html">Newsletter</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Front Page</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </nav>
+    </header>
 
-<!-- Hero Section -->
-<section class="hero">
-    <img src="images/cake.jpg" alt="Delicious Recipe">
-    <div class="hero-content">
-        <h1>Discover Authentic Filipino Recipes</h1>
-        <button onclick="goToRecipes()">Explore Recipes</button>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/cake.jpg" alt="Delicious Recipe">
+        <div class="hero-content">
+            <h1>Discover Authentic Filipino Recipes</h1>
+            <button onclick="goToRecipes()">Explore Recipes</button>
+        </div>
+    </section>
 
-<!-- Featured Recipes Section -->
-<section class="section">
-    <h2>Featured Recipes</h2>
-    <div class="carousel">
-        <div class="carousel-items">
-            <div class="carousel-item">
-                <div class="recipe-card">
-                    <img src="images/adobo.jpg" alt="Adobo">
-                    <div class="content">
-                        <h3>Chicken Adobo</h3>
-                        <p>A classic Filipino dish with soy sauce and vinegar.</p>
-                        <a href="adobo.html">View Recipe</a>
-                    </div>
+    <!-- Featured Recipes -->
+    <section class="section">
+        <h2>Featured Recipes</h2>
+        <div class="recipes-container">
+            <div class="recipe-card">
+                <img src="images/adobo.jpg" alt="Adobo">
+                <div class="content">
+                    <h3>Chicken Adobo</h3>
+                    <p>A classic Filipino dish with soy sauce and vinegar.</p>
+                    <a href="adobo.html">View Recipe</a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="recipe-card">
-                    <img src="images/sinigang.jpg" alt="Sinigang">
-                    <div class="content">
-                        <h3>Sinigang</h3>
-                        <p>A tangy tamarind-based soup with pork or shrimp.</p>
-                        <a href="sinigang.html">View Recipe</a>
-                    </div>
+            <div class="recipe-card">
+                <img src="images/sinigang.jpg" alt="Sinigang">
+                <div class="content">
+                    <h3>Sinigang</h3>
+                    <p>A tangy tamarind-based soup with pork or shrimp.</p>
+                    <a href="sinigang.html">View Recipe</a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="recipe-card">
-                    <img src="images/lechon.jpg" alt="Lechon">
-                    <div class="content">
-                        <h3>Lechon</h3>
-                        <p>Crispy, flavorful roast pig - a fiesta favorite!</p>
-                        <a href="lechon.html">View Recipe</a>
-                    </div>
+            <div class="recipe-card">
+                <img src="images/lechon.jpg" alt="Lechon">
+                <div class="content">
+                    <h3>Lechon</h3>
+                    <p>Crispy, flavorful roast pig - a fiesta favorite!</p>
+                    <a href="lechon.html">View Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="carousel-buttons">
-            <button onclick="prevSlide()">❮</button>
-            <button onclick="nextSlide()">❯</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="contact.html">Contact</a>
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
         </div>
-    </div>
-</section>
+    </footer>
 
-<footer>
-    <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
-</footer>
-
-<script>
-    function toggleMenu() {
-        const nav = document.querySelector("nav");
-        nav.style.display = (nav.style.display === "flex" || nav.style.display === "") ? "none" : "flex";
-    }
-
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const carouselItems = document.querySelector('.carousel-items');
-
-    function nextSlide() {
-        if (currentSlide < slides.length - 1) {
-            currentSlide++;
-        } else {
-            currentSlide = 0;
+    <script>
+        function goToRecipes() {
+            window.location.href = "recipes.html";
         }
-        updateCarousel();
-    }
 
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-        } else {
-            currentSlide = slides.length - 1;
+        function searchRecipes() {
+            let query = document.getElementById("search-bar").value.toLowerCase();
+            if (query.trim() === "") {
+                alert("Please enter a recipe name to search.");
+                return;
+            }
+            window.location.href = `search.html?query=${query}`;
         }
-        updateCarousel();
-    }
 
-    function updateCarousel() {
-        carouselItems.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-</script>
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                searchRecipes();
+            }
+        }
+
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
