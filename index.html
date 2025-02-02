@@ -1,142 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanseee Recipee</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #fff;
+            text-align: center;
+        }
 
-.card-wrapper{
-  max-width: 1100px;
-  margin: 0 60px 35px;
-  padding: 20px 10px;
-  overflow: hidden;
-}
-.card-list .card-item{
-  list-style: none;
-}
-.card-list .card-item .card-link{
-  user-select: none;
-  display: block;
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  text-decoration: none;
-  border: 2px solid transparent;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.2s ease;
-}
-.card-list .card-item .card-link:active{
-  cursor: grabbing;
-}
-.card-list .card-item .card-link:hover{
-  border-color: #5372F0;
-}
-.card-list .card-link .card-image{
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.card-list .card-link .badge{
-  color: #5372F0;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin: 16px 0 18px;
-  background: #DDE4FF;
-  width: fit-content;
-  border-radius: 50px;
-}
-.card-list .card-link .badge.beef{
-  color: green;
-  background: lightblue;
-}
-.card-list .card-link .badge.pork{
-  color: rgb(153, 0, 255);
-  background: lightblue;
-}
-.card-list .card-link .badge.chicken{
-  color: rgb(240, 116, 0);
-  background: lightblue;
-}
-.card-list .card-link .badge.fish{
-  color: rgb(247, 8, 255);
-  background: lightblue;
-}
-.card-list .card-link .badge.vegetable{
-  color: rgb(248, 0, 0);
-  background: lightblue;
-}
-.card-list .card-link .badge.snacks{
-  color: rgb(4, 0, 214);
-  background: lightblue;
-}
-.card-list .card-link .badge.dessert{
-  color: rgb(247, 8, 255);
-  background: lightblue;
-}
-.card-list .card-link .card-title{
-  font-size: 1.19rem;
-  color: black;
-  font-weight: 600;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #000;
+            border-bottom: 1px solid #D1D1D1;
+        }
 
-}
-.card-list .card-link .card-button{
-  height: 35px;
-  width: 35px;
-  color: #5372F0;
-  border-radius: 50%;
-  margin: 30px 0 5px;
-  background: none;
-  cursor: pointer;
-  border: 2px solid #5372F0;
-  transform: rotate(-45deg);
-  transition: 0.4s ease;
-}
-.card-list .card-link:hover .card-button{
-  color: #fff;
-  background: #5372F0;
-}
-.card-wrapper .swiper-pagination-bullet{
-  height: 13px;
-  width: 13px;
-  opacity: 0.5;
-  background: #5372F0;
-}
-.card-wrapper .swiper-pagination-bullet-active{
-  opacity: 1;
-}
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Lora', serif;
+            color: #fff;
+        }
 
-.card-wrapper .swiper-slide-button{
-  color: #5372F0;
-  margin-top: -35px;
-}
-@media screen and (max-width: 768px) {
-  .card-wrapper{
-    margin: 0 10px 25px;
-  }
-  .card-wrapper .swiper-slide-button{
-    display: none;
-  }
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
 
-.welcometitle{
-  font-family: Rubik Mono One, serif; 
-  font-weight: 100; 
-  font-style: normal; 
-  font-size: 30px; 
-  margin-bottom: -20px;
-}
-@media (max-width: 425px) {
-  .welcometitle {
-    font-size: 16px;
-    margin-top: 10px;
+        nav ul li {
+            margin: 0 15px;
+        }
 
-  }
-}
-@media (max-width: 375px), (max-width: 320px) {
-  .welcometitle {
-    font-size: 16px;
-    margin-top: 10px;
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-  }
-}
+        nav ul li a:hover {
+            color: #D1D1D1;
+        }
 
-.swiper{
-  margin-bottom: 50px;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #000;
+            padding: 20px;
+        }
+
+        .hero-logo {
+            height: 150px;
+            max-width: 80%;
+        }
+
+        .tagline {
+            font-size: 2rem;
+            font-family: 'Lucida Bright', serif;
+            text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #D1D1D1;
+            color: #000;
+        }
+
+        footer {
+            background-color: #000;
+            color: #D1D1D1;
+            padding: 20px;
+            border-top: 1px solid #D1D1D1;
+        }
+
+        .footer-links a {
+            color: #D1D1D1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #000;
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px;
+            }
+
+            .hero {
+                height: auto;
+                padding: 50px 20px;
+            }
+
+            .hero-logo {
+                height: 120px;
+            }
+
+            .tagline {
+                font-size: 1.8rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Wansee Recipee</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <img src="images/logo.png" alt="Website Logo" class="hero-logo">
+        <h1 class="tagline">Savor the Flavors of the Philippines</h1>
+        <button onclick="goToHome()">Start Exploring</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com">Facebook</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+    </div>
+</footer>
+
+<script>
+    function goToHome() {
+        window.location.href = "home.html";
+    }
+
+    function toggleMenu() {
+        var nav = document.querySelector("nav");
+        if (nav.style.display === "flex") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "flex";
+        }
+    }
+</script>
+
+</body>
+</html>
