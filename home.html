@@ -34,11 +34,9 @@
 
         /* Search Bar */
         .search-container {
-            flex: 2;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            width: 100%;
         }
 
         .search-bar {
@@ -237,6 +235,8 @@
             .search-container {
                 flex: 1;
                 justify-content: flex-start;
+                width: 100%;
+                margin-bottom: 10px;
             }
 
             .search-bar {
@@ -390,7 +390,6 @@
             }
         }
 
-        // Toggle mobile menu visibility
         function toggleMenu() {
             const menu = document.querySelector('nav ul');
             menu.classList.toggle('active');
