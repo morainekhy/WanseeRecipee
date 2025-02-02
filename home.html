@@ -16,7 +16,7 @@
 
         header {
             display: flex;
-            justify-content: space-between; /* Adjusted to space out header elements */
+            justify-content: flex-start;
             align-items: center;
             padding: 15px 50px;
             background-color: #000;
@@ -74,7 +74,8 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-between; /* Side by side links */
+            flex-wrap: wrap; /* Allow for better layout adjustment */
+            align-content: center; /* Align navigation items based on content height */
         }
 
         nav ul li {
@@ -144,12 +145,13 @@
         }
 
         .recipes-container {
-            display: flex; /* Changed from grid to flexbox for side by side layout */
+            display: flex; /* Use flexbox to display recipe cards side by side */
+            flex-wrap: wrap;
             justify-content: space-between;
+            align-content: center; /* Align all items vertically if needed */
             gap: 20px;
             padding: 20px;
             text-align: left;
-            flex-wrap: wrap; /* Allows wrapping for smaller screens */
         }
 
         .recipe-card {
@@ -157,7 +159,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 30%; /* Adjust width for three cards side by side */
+            width: 30%; /* Three cards side by side */
             transition: transform 0.3s ease;
         }
 
@@ -235,6 +237,7 @@
                 flex-direction: column;
                 align-items: center;
                 padding-top: 10px;
+                align-content: flex-start; /* Align navigation items when wrapped */
             }
 
             nav ul li {
@@ -339,7 +342,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section - Single Image -->
+    <!-- Hero Section -->
     <section class="hero">
         <img src="images/cake.jpg" alt="Delicious Recipe">
         <div class="hero-content">
@@ -379,9 +382,9 @@
         </div>
     </section>
 
-<footer>
-    <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
+    </footer>
 
 <script>
     function searchRecipes() {
