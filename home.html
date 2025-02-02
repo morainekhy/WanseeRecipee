@@ -34,13 +34,15 @@
 
         /* Search Bar */
         .search-container {
+            flex: 2;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
         .search-bar {
-            width: 250px;
+            width: 300px;
             padding: 10px 15px;
             border-radius: 20px;
             border: 1px solid #D1D1D1;
@@ -69,13 +71,6 @@
         .search-button img {
             width: 20px;
             height: 20px;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
         }
 
         nav ul {
@@ -236,7 +231,6 @@
                 flex: 1;
                 justify-content: flex-start;
                 width: 100%;
-                margin-bottom: 10px;
             }
 
             .search-bar {
@@ -308,7 +302,6 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
             </button>
         </div>
-
         <nav>
             <ul>
                 <li><a href="index.html">Front Page</a></li>
@@ -390,6 +383,7 @@
             }
         }
 
+        // Toggle mobile menu visibility
         function toggleMenu() {
             const menu = document.querySelector('nav ul');
             menu.classList.toggle('active');
