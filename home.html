@@ -16,7 +16,7 @@
 
         header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between; /* Adjusted to space out header elements */
             align-items: center;
             padding: 15px 50px;
             background-color: #000;
@@ -74,6 +74,7 @@
             padding: 0;
             margin: 0;
             display: flex;
+            justify-content: space-between; /* Side by side links */
         }
 
         nav ul li {
@@ -136,17 +137,19 @@
             background-color: #D1D1D1;
         }
 
+        /* Featured Recipes Layout: Side by side */
         .section {
             padding: 50px;
             text-align: center;
         }
 
         .recipes-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex; /* Changed from grid to flexbox for side by side layout */
+            justify-content: space-between;
             gap: 20px;
             padding: 20px;
             text-align: left;
+            flex-wrap: wrap; /* Allows wrapping for smaller screens */
         }
 
         .recipe-card {
@@ -154,6 +157,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%; /* Adjust width for three cards side by side */
             transition: transform 0.3s ease;
         }
 
@@ -247,7 +251,13 @@
             }
 
             .recipes-container {
-                grid-template-columns: 1fr;
+                flex-direction: column; /* Stack vertically on smaller screens */
+                align-items: center;
+            }
+
+            .recipe-card {
+                width: 80%; /* Adjusted width for smaller screens */
+                margin-bottom: 20px;
             }
         }
 
