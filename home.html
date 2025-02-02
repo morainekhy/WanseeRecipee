@@ -16,7 +16,7 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 15px 50px;
             background-color: #000;
@@ -51,7 +51,6 @@
             background-repeat: no-repeat;
             background-position: 10px center;
             padding-left: 40px;
-            cursor: pointer;
         }
 
         .search-button {
@@ -143,11 +142,11 @@
         }
 
         .recipes-container {
-            display: flex;
-            justify-content: space-around; /* Linear layout */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
             text-align: left;
-            gap: 20px; /* Space between the cards */
         }
 
         .recipe-card {
@@ -155,7 +154,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px; /* Fixed width for each card */
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: scale(1.05);
         }
 
         .recipe-card img {
@@ -195,20 +198,12 @@
             color: #D1D1D1;
             padding: 20px;
             border-top: 1px solid #D1D1D1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 15px;
         }
 
         .footer-links a {
             color: #D1D1D1;
             text-decoration: none;
+            margin: 0 15px;
         }
 
         .footer-links a:hover {
@@ -252,7 +247,7 @@
             }
 
             .recipes-container {
-                flex-direction: column; /* Stack the cards on mobile */
+                grid-template-columns: 1fr;
             }
         }
 
@@ -374,14 +369,25 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-        <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
+</footer>
+
+<script>
+    function searchRecipes() {
+        alert("Search functionality will be implemented soon!");
+    }
+
+    function goToRecipes() {
+        window.location.href = "recipes.html"; // Redirect to recipes page
+    }
+
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            searchRecipes();
+        }
+    }
+</script>
 
 </body>
 </html>
