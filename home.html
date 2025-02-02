@@ -16,7 +16,7 @@
 
         header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
             background-color: #000;
@@ -143,11 +143,11 @@
         }
 
         .recipes-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: space-around; /* Linear layout */
             padding: 20px;
             text-align: left;
+            gap: 20px; /* Space between the cards */
         }
 
         .recipe-card {
@@ -155,6 +155,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Fixed width for each card */
         }
 
         .recipe-card img {
@@ -194,12 +195,20 @@
             color: #D1D1D1;
             padding: 20px;
             border-top: 1px solid #D1D1D1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
         }
 
         .footer-links a {
             color: #D1D1D1;
             text-decoration: none;
-            margin: 0 15px;
         }
 
         .footer-links a:hover {
@@ -243,7 +252,7 @@
             }
 
             .recipes-container {
-                grid-template-columns: 1fr;
+                flex-direction: column; /* Stack the cards on mobile */
             }
         }
 
@@ -365,9 +374,14 @@
         </div>
     </section>
 
-<footer>
-    <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
