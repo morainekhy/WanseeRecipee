@@ -34,11 +34,9 @@
 
         /* Search Bar */
         .search-container {
-            flex: 2;
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 100%;
+            flex: 2;
         }
 
         .search-bar {
@@ -73,11 +71,13 @@
             height: 20px;
         }
 
+        /* Navigation */
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
+            align-items: center;
         }
 
         nav ul li {
@@ -92,13 +92,6 @@
 
         nav ul li a:hover {
             color: #D1D1D1;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
         }
 
         /* Hero Section */
@@ -238,26 +231,14 @@
             }
 
             nav ul {
-                display: none; /* Hide navigation links by default */
+                display: flex;
                 width: 100%;
-                flex-direction: column;
-                padding-left: 0;
+                justify-content: center;
                 margin-top: 15px;
             }
 
             nav ul li {
-                margin: 5px 0;
-                text-align: center;
-            }
-
-            .menu-icon {
-                display: block;
-                font-size: 2rem;
-                cursor: pointer;
-            }
-
-            .mobile-menu.active {
-                display: flex;
+                margin: 5px;
             }
 
             .hero {
@@ -309,7 +290,6 @@
                 <li><a href="newsletter.html">Newsletter</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
-            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         </nav>
     </header>
 
@@ -381,12 +361,6 @@
             if (event.key === 'Enter') {
                 searchRecipes();
             }
-        }
-
-        // Toggle mobile menu visibility
-        function toggleMenu() {
-            const menu = document.querySelector('nav ul');
-            menu.classList.toggle('active');
         }
     </script>
 
