@@ -120,57 +120,36 @@
             color: #fff;
         }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
+                /* Responsive Design */
+        @media only screen and (max-width: 768px) {
             nav {
-                display: none;
-                width: 100%;
-                text-align: center;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #000;
-                flex-direction: column;
+                padding: 15px 20px; /* Adjust navigation padding for smaller screens */
             }
 
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                padding: 0;
+            nav a {
+                margin: 0 10px; /* Reduce spacing between links */
+                font-size: 1rem; /* Reduce font size */
             }
 
-            nav ul li {
-                margin: 10px 0;
+            #start-page h1 {
+                font-size: 2.5rem; /* Smaller font size for header text */
             }
 
-            nav ul li a {
-                display: block;
-                padding: 10px;
+            #start-page p {
+                font-size: 1.2rem; /* Adjust font size for paragraph */
             }
 
-            .hero {
-                height: auto;
-                padding: 50px 20px;
+            #start-page button {
+                font-size: 1.2rem; /* Reduce button font size */
+                padding: 10px 30px; /* Adjust button padding */
             }
 
-            .hero-logo {
-                height: 120px;
+            footer p {
+                font-size: 0.9rem; /* Smaller font size for footer text */
             }
 
-            .tagline {
-                font-size: 1.8rem;
-            }
-
-            button {
-                font-size: 1rem;
-                padding: 10px 20px;
+            footer a {
+                margin: 5px; /* Adjust spacing between links for mobile */
             }
         }
     </style>
