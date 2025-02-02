@@ -12,6 +12,7 @@
             background-color: #fff;
             color: #000;
             text-align: center;
+            overflow-x: hidden;
         }
 
         header {
@@ -331,6 +332,33 @@
     <footer>
         <p>&copy; 2025 Team Wansee Inc. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Interactivity -->
+
+    <script>
+        // Function to handle search when Enter key is pressed
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                searchRecipes();
+            }
+        }
+
+        // Simulate a search action
+        function searchRecipes() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            if (query) {
+                alert(`Searching for recipes with the keyword: "${query}"`);
+                // Here you can implement a dynamic search feature or navigate to search results page.
+                // For example:
+                // window.location.href = `search_results.html?q=${query}`;
+            }
+        }
+
+        // Function to navigate to the recipes section
+        function goToRecipes() {
+            window.location.href = "recipes.html";
+        }
+    </script>
 
 </body>
 </html>
