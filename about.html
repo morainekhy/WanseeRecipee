@@ -19,6 +19,97 @@
     <link href="js/bootstrap.min.js" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
     <style>
+             /* Global Styles */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000957;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #FFEB00;
+        }
+
+ /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000957;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-size: 1.2rem;
+            color: #344CB7;
+        }
+
+        nav a:hover {
+            color: #FFEB00;
+        }
+
+
+        /* About Page */
+        #about-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            text-align: center;
+            background-color: #f4f4f4;
+            background-image: url('./images/group.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #about-page button {
+            background-color: #344CB7;
+            color: #ffffff;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #about-page button:hover {
+            background-color: #577BC1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000957;
+            color: #FFEB00;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #FFEB00;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #344CB7;
+        }
       /* Set the about-page container to be relatively positioned */
       .about-page {
         position: relative; /* This is important for absolute positioning of the image */
